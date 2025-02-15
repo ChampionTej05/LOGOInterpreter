@@ -41,7 +41,7 @@ class LogoParser():
             node = self.parse_command()
             if node :
                 AST.append(node)
-            return AST
+        return AST
 
 
     def parse_command(self):
