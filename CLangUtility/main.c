@@ -13,7 +13,8 @@ int main(){
 
     // printf("%s \n", input);
 
-    char input[] = "REPEAT 4 [ FD 50 RT 90 ]";
+    // char input[] = "REPEAT 4 [ FD 50 RT 90 ]";
+    char input[] = "REPEAT 1 [ FD 90 RT 90] LT 30 RT 50 REPEAT 2 [FD 30]";
     char *tokens[MAX_TOKENS];
     int token_count=0;
 
@@ -43,20 +44,22 @@ int main(){
     }
 
     // Print AST
-    ASTNode *node = ast;
-    while (node) {
-        if (node->type == COMMAND_NODE) {
-            printf("COMMAND: %s %d\n", node->data.command.operation, node->data.command.degree);
-        } else {
-            printf("REPEAT: %d times\n", node->data.repeat.repeat_count);
-            ASTNode *sub = (ASTNode*) node->data.repeat.body;
-            while (sub) {
-                printf("  -> COMMAND: %s %d\n", sub->data.command.operation, sub->data.command.degree);
-                sub = (ASTNode *) sub->next;
-            }
-        }
-        node = (ASTNode *) node->next;
-    }
+    // ASTNode *node = ast;
+    // while (node) {
+    //     if (node->type == COMMAND_NODE) {
+    //         printf("COMMAND: %s %d\n", node->data.command.operation, node->data.command.degree);
+    //     } else {
+    //         printf("REPEAT: %d times\n", node->data.repeat.repeat_count);
+    //         ASTNode *sub = (ASTNode*) node->data.repeat.body;
+    //         while (sub) {
+    //             printf("  -> COMMAND: %s %d\n", sub->data.command.operation, sub->data.command.degree);
+    //             sub = (ASTNode *) sub->next;
+    //         }
+    //     }
+    //     node = (ASTNode *) node->next;
+    // }
+
+    execute(ast);
 
     free_ast(ast);
 
