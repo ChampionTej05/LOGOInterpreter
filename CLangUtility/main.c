@@ -52,10 +52,10 @@ int main(){
             ASTNode *sub = (ASTNode*) node->data.repeat.body;
             while (sub) {
                 printf("  -> COMMAND: %s %d\n", sub->data.command.operation, sub->data.command.degree);
-                sub = sub->next;
+                sub = (ASTNode *) sub->next;
             }
         }
-        node = node->next;
+        node = (ASTNode *) node->next;
     }
 
     free_ast(ast);

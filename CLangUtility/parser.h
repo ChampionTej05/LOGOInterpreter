@@ -1,8 +1,6 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-#include "lexer.h"  // Include lexer.h to use Token structure
-
 // List of valid LOGO commands
 #define VALID_COMMANDS_COUNT 5
 //Declares an array of valid LOGO commands.
