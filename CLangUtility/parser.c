@@ -64,3 +64,31 @@ int validate_tokens(char *tokens[], int token_count){
 
     return 1;
 }
+
+ASTNode *parse_tokens(char *tokens[], int token_count, int *index){
+    ASTNode *head = NULL, *tail = NULL;
+
+    while(*index < token_count){
+
+        // case 1: REPEAT TOKEN 
+        if(strcmp(tokens[*index], "REPEAT")==0){
+
+            // validate if  next token is NUMBER and "[" opening brace
+            if( *index+2 >= token_count 
+            || !is_number(tokens[*index + 1])
+            || strcmp(tokens[*index+2],"[") !=0){
+                // i.e if there are not more than two tokens 
+                // and next token is not number 
+                // and next to next token is not [ --> INVALID 
+                printf("Error: Invalid REPEAT syntax\n");
+                return NULL;
+            }
+
+            // Valid REPEAT syntax , now we need to create linked list to store the inner block 
+            
+        }
+
+        // case 2: COMMAND TOKEN 
+    }
+
+}
