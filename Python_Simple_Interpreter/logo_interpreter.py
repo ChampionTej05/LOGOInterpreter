@@ -1,4 +1,5 @@
 import re
+import turtle
 
 class LogoInterpreter():
     
@@ -31,6 +32,7 @@ class LogoInterpreter():
                     print("expected integer, got ", tokens[index])
                     return 
                 instructions.append("{}\n".format(degree))
+                turtle.forward(degree)
            
             
             elif tokens[index] == 'BK':
@@ -42,6 +44,7 @@ class LogoInterpreter():
                     print("expected integer, got ", tokens[index])
                     return 
                 instructions.append("{}\n".format(degree))
+                turtle.back(degree)
                
             elif tokens[index] == 'RT':
                 instructions.append("Moved Right By ")
@@ -52,6 +55,7 @@ class LogoInterpreter():
                     print("expected integer, got ", tokens[index])
                     return 
                 instructions.append("{}\n".format(degree))
+                turtle.right(degree)
                 
             elif tokens[index] == 'LT':
                 instructions.append("Move Left By ")
@@ -62,6 +66,7 @@ class LogoInterpreter():
                     print("expected integer, got ", tokens[index])
                     return 
                 instructions.append("{}\n".format(degree))
+                turtle.left(degree)
             
             elif tokens[index] == 'REPEAT':
                 index+=1 
@@ -103,9 +108,11 @@ class LogoInterpreter():
 
 
 
-
+turtle.speed(3)
 obj = LogoInterpreter()
 statement = "REPEAT 4 [FD 40 RT 90]"
 tokens = obj.tokensize(statement)
 print(tokens)
 obj.execute(tokens)
+turtle.mainloop()
+turtle.done()
