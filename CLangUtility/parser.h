@@ -16,8 +16,8 @@ typedef struct {
 }CommandNode;
 
 typedef struct {
-    int repeat;
-    struct ASTNode *body;
+    int repeat_count;
+    struct ASTNode *body; // this points to the first node inside REPEAT which is suppose to be executed 
 }RepeatNode;
 
 typedef struct{

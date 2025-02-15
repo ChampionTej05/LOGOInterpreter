@@ -33,5 +33,33 @@ int main(){
 
     printf("\n Tokens are validated \n ");
 
+    // keep track of token parsing 
+    int index =0 ;
+
+    ASTNode *ast = parse_tokens(tokens, token_count, &index);
+    if(ast == NULL || !ast ){
+        printf("AST Parsing Failed .. ");
+        return 1;
+    }
+
+    // Print AST
+    ASTNode *node = ast;
+    while (node) {
+        if (node->type == COMMAND_NODE) {
+            printf("COMMAND: %s %d\n", node->data.command.operation, node->data.command.degree);
+        } else {
+            printf("REPEAT: %d times\n", node->data.repeat.repeat_count);
+            ASTNode *sub = (ASTNode*) node->data.repeat.body;
+            while (sub) {
+                printf("  -> COMMAND: %s %d\n", sub->data.command.operation, sub->data.command.degree);
+                sub = sub->next;
+            }
+        }
+        node = node->next;
+    }
+
+    free_ast(ast);
+
+
     return 0;
 }
