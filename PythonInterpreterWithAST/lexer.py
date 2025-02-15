@@ -16,8 +16,8 @@ class LogoLexer():
     
 
 
-statement = "REPEAT 4 [ FD 40 RT 90 ]"
+# statement = "REPEAT 4 [ FD 40 RT 90 ]"
 
-obj = LogoLexer(statement)
-tokens = obj.tokenize()
-print(tokens)
+# obj = LogoLexer(statement)
+# tokens = obj.tokenize()
+# print(tokens)

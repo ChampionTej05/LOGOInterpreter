@@ -96,11 +96,11 @@ class LogoParser():
 
 
 
-tokens = ['REPEAT', '4', '[', 'FD', '40', 'RT', '90', ']']
+# tokens = ['REPEAT', '4', '[', 'FD', '40', 'RT', '90', ']']
 
-obj = LogoParser(tokens)
+# obj = LogoParser(tokens)
 
-AST = obj.parse()
-print(AST)
+# AST = obj.parse()
+# print(len(AST))
 
 
