@@ -12,11 +12,36 @@ void to_uppercase(char *str){
     }
 }
 
+int is_number(const char *token){
+    for(int i=0; token[i];i++){
+        if(!isdigit((unsigned char)token[i])){
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+
+int is_bracket(const char *token){
+    for(int i=0; token[i];i++){
+        if(strcmp("[", &token[i])==0 || 
+            strcmp("]", &token[i]) ==0 ){
+                return 1;
+            }
+    }
+
+    return 0;
+}
 
 
 int validate_tokens(char *tokens[], int token_count){
 
     for (int i=0;i < token_count; i++){
+        if(is_number(tokens[i]) || is_bracket(tokens[i])){
+            // printf("Skipping validation as token is not operation command");
+            continue;
+        }
 
         int token_valid = 0;
 

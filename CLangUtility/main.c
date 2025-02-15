@@ -31,7 +31,7 @@ int main(){
         return 1;
     }
 
-    printf("Tokens are validated");
+    printf("\n Tokens are validated \n ");
 
     return 0;
 }

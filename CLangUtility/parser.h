@@ -11,5 +11,7 @@ extern const char *VALID_COMMANDS[VALID_COMMANDS_COUNT];
 // Function declarations
 int validate_tokens(char *tokens[], int token_count);
 void to_uppercase(char *str);
+int is_number(const char *token); 
+int is_bracket(const char *token);
 
 #endif
