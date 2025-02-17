@@ -1,0 +1,13 @@
+{
+  "ast": [
+    { "type": "REPEAT_NODE", "repeat_count": 1, "body": [
+      { "type": "COMMAND_NODE", "operation": "FD", "degree": 90 },
+      { "type": "COMMAND_NODE", "operation": "RT", "degree": 90 }
+    ] },
+    { "type": "COMMAND_NODE", "operation": "LT", "degree": 30 },
+    { "type": "COMMAND_NODE", "operation": "RT", "degree": 50 },
+    { "type": "REPEAT_NODE", "repeat_count": 2, "body": [
+      { "type": "COMMAND_NODE", "operation": "FD", "degree": 30 }
+    ] }
+  ]
+}
