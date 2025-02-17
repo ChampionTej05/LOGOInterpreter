@@ -4,6 +4,7 @@
 #include "lexer.h"
 #include "parser.h"
 #include "execute.h"
+#include "dump_ast.c"
 
 int main(){
 
@@ -59,7 +60,20 @@ int main(){
     //     node = (ASTNode *) node->next;
     // }
 
+
+
     execute(ast);
+
+    // Dump AST to a file
+    FILE *out = fopen("ast_output.json", "w");
+    if (!out) {
+        perror("Error opening file");
+        return 1;
+    }
+
+    dump_ast_json(ast, out);
+    fclose(out);
+
 
     free_ast(ast);
 

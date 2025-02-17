@@ -30,3 +30,9 @@ Second Phase:
         - AST { type=command, data.commandnode.operation=RT, data.commandnode.degree=8=90, next=null} -> S5
             - S4.next = S5 
         - After everything finishes. S1.next = null because there is no sequential block after outer repeat else if we had somethign like REPEAT 4 [ FD 50  REPEAT 5 [ FD 8 RT 90]]  FD 8 , S1.next = AST(fd, 8)
+
+
+Third Phase : 
+- Execution of the LOGO language by Travering AST 
+- OR we can dump the AST into any platform independent format like (JSON, XML, Protobuf)
+    - Right now we dumped into JSON format
