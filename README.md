@@ -1,0 +1,1 @@
+This is toy project to understand how does Lexing, parsing and compilation/interpretation of language works. I tried this project in python to showcase high abstraction & C to understand low level intricacies for Interpreter.
